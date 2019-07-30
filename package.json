@@ -1,0 +1,29 @@
+{
+  "name": "phonebook-backend",
+  "version": "1.0.0",
+  "description": "basic backend for my phone book app",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "watch": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tydevelopes/phonebook-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tydevelopes/phonebook-backend/issues"
+  },
+  "homepage": "https://github.com/tydevelopes/phonebook-backend#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
