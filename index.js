@@ -1,15 +1,17 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
+const cors = require('cors');
 
 const app = express();
 app.use(bodyParser.json());
+app.use(cors());
 
 morgan.token('data', (request, response) => {
   return JSON.stringify(request.body);
 })
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms :data'));
-
+app.use(express.static('build'))
 
 let persons = [
   {
@@ -46,7 +48,7 @@ app.get('/api/persons', (request, response) => {
 });
 
 // get phone stats
-app.get('/info', (request, response) => {
+app.get('/api/info', (request, response) => {
   response.send(`
     <p>Phonebook has info for ${persons.length} people</p>
     <p>${new Date().toString()}</p>
