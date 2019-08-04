@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const uniqueValidator = require('mongoose-unique-validator');
 
 const url = process.env.MONGODB_URI;
 
@@ -18,19 +17,14 @@ const phoneBookSchema = new mongoose.Schema({
   name: {
     type: String,
     minlength: 3,
-    required: true,
-    unique: true
+    required: true
   },
   number: {
     type: String,
     minlength: 8,
-    required: true,
-    unique: true
+    required: true
   }
 });
-
-// Apply the uniqueValidator plugin to userSchema.
-phoneBookSchema.plugin(uniqueValidator);
 
 // format the objects returned by Mongoose
 phoneBookSchema.set('toJSON', {
