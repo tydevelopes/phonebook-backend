@@ -19,29 +19,6 @@ app.use(
 );
 app.use(express.static('build'));
 
-// let persons = [
-//   {
-//     name: 'Arto Hellas',
-//     number: '040-123456',
-//     id: 1
-//   },
-//   {
-//     name: 'Ada Lovelace',
-//     number: '39-44-5323523',
-//     id: 2
-//   },
-//   {
-//     name: 'Dan Abramov',
-//     number: '12-43-234345',
-//     id: 3
-//   },
-//   {
-//     name: 'tyvoiax',
-//     number: '11-111-122',
-//     id: 4
-//   }
-// ];
-
 // route to homepage
 app.get('/', (request, response) => {
   console.log('home page requested');
@@ -97,9 +74,6 @@ app.post('/api/persons', (request, response, next) => {
       .status(400)
       .json({ error: 'name or number cannot be empty' });
   }
-  // if (persons.some(person => person.name === body.name)) {
-  //   return response.status(400).json({ error: 'name must be unique' });
-  // }
 
   Phonebook.find({ name: body.name }, (error, docs) => {
     console.log('error:', error);

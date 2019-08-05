@@ -37,25 +37,3 @@ phoneBookSchema.set('toJSON', {
 
 // create a model
 module.exports = mongoose.model('PhoneBook', phoneBookSchema);
-
-// if (process.argv.length === 3) {
-//   PhoneBook.find({}).then(result => {
-//     result.forEach(person => {
-//       console.log(person);
-//     });
-//     mongoose.connection.close();
-//   });
-// }
-
-// if (process.argv.length === 5) {
-//   const person = new PhoneBook({
-//     name: process.argv[3],
-//     number: process.argv[4]
-//   });
-
-//   person.save().then(response => {
-//     console.log(`added ${response.name} ${response.number} to phonebook`);
-//     console.log('response:', response);
-//     mongoose.connection.close();
-//   });
-// }
